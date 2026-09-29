@@ -1,346 +1,330 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Addiction - Wholesale Inventory</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #181b20;
+            --accent-red: #e63946;
+            --accent-gold: #ffb703;
+            --text-main: #f1f1f1;
+            --text-muted: #8d99ae;
+            --border-color: #2b2f38;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-red);
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: var(--accent-red);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background-color: #0d0f12;
+            color: #fff;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent-red);
+        }
+
+        button {
+            background-color: var(--accent-red);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .sub-options {
+            display: none;
+            background: #111317;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 8px;
+            border: 1px dashed var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        th {
+            color: var(--text-muted);
+            background-color: #121418;
+        }
+
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            background: var(--border-color);
+        }
+
+        .btn-del {
+            background: transparent;
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+            padding: 4px 8px;
+            width: auto;
+            font-size: 0.75rem;
+            margin: 0;
+        }
+
+        .btn-del:hover {
+            background: var(--accent-red);
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Auto Addiction - Wholesale Inventory&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #0f1115;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #181b20;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-red: #e63946;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-gold: #ffb703;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #f1f1f1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #8d99ae;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #2b2f38;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 span {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr 2fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 900px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-gold);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>input, select, button {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0d0f12;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>input:focus, select:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.9;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.sub-options {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #111317;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px dashed var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>table {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>th, td {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>th {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #121418;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 3px 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-del {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-del:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent-red);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Auto &lt;span&gt;Addiction&lt;/span&gt;&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size: 0.85rem; color: var(--text-muted);"&gt;Wholesale Operations &amp; Stock Ledger&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Entry Form Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Add Stock / Dispatch&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;form id="stockForm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="entryType"&gt;Transaction Type&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="entryType"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="In Stock"&gt;Add Stock (Inward)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Dispatched"&gt;Dispatch to Retailer (Outward)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group" id="retailerGroup" style="display: none;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="retailerName"&gt;Retailer / Shop Name&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="retailerName" placeholder="Enter retailer name"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="category"&gt;Product Category&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="category" onchange="handleCategoryChange()"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;-- Select Category --&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Light Bulb H1"&gt;Light Bulb H1&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Light Bulb H4"&gt;Light Bulb H4&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Android System"&gt;Android System&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Ambient Light"&gt;Ambient Light&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Camera"&gt;Camera&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Bass Tube"&gt;Bass Tube&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Frame"&gt;Frame&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Center Lock (Single Door)"&gt;Center Lock (Single Door)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Center Lock (4 Door)"&gt;Center Lock (4 Door)&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Sub Options for Bulbs --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="sub-options" id="wattageGroup"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="wattage"&gt;Wattage Option&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="wattage"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="50W"&gt;50W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="70W"&gt;70W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="90W"&gt;90W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="110W"&gt;110W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="130W"&gt;130W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="150W"&gt;150W&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group" style="margin-top: 10px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="quantity"&gt;Quantity (Pcs)&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" id="quantity" min="1" placeholder="0" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit"&gt;Submit Entry&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Inventory List Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Stock Ledger&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Type&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Product Details&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Qty&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Retailer / Note&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Action&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody id="inventoryTable"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Dynamic Rows Here --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const entryTypeSelect = document.getElementById('entryType');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const retailerGroup = document.getElementById('retailerGroup');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const categorySelect = document.getElementById('category');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const wattageGroup = document.getElementById('wattageGroup');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const stockForm = document.getElementById('stockForm');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const inventoryTable = document.getElementById('inventoryTable');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Toggle Retailer Field</p>
-<p class="p1"><span class="Apple-converted-space">        </span>entryTypeSelect.addEventListener('change', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (e.target.value === 'Dispatched') {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>retailerGroup.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>retailerGroup.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Toggle Wattage Dropdown for Bulbs</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function handleCategoryChange() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const val = categorySelect.value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (val === 'Light Bulb H1' || val === 'Light Bulb H4') {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>wattageGroup.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>wattageGroup.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Save &amp; Render Inventory using LocalStorage</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let records = JSON.parse(localStorage.getItem('auto_addiction_inventory')) || [];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function renderTable() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>inventoryTable.innerHTML = '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if(records.length === 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>inventoryTable.innerHTML = '&lt;tr&gt;&lt;td colspan="5" style="text-align:center; color: var(--text-muted);"&gt;No items recorded yet.&lt;/td&gt;&lt;/tr&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>records.forEach((item, index) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const tr = document.createElement('tr');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>tr.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;&lt;span class="badge" style="color: ${item.type === 'In Stock' ? '#4cc9f0' : '#f72585'}"&gt;${item.type}&lt;/span&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;&lt;strong&gt;${item.category}&lt;/strong&gt; ${item.wattage ? `(${item.wattage})` : ''}&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;${item.quantity}&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;${item.retailer || '-'}&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td&gt;&lt;button class="btn-del" onclick="deleteEntry(${index})"&gt;X&lt;/button&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>inventoryTable.appendChild(tr);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>stockForm.addEventListener('submit', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const type = entryTypeSelect.value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const category = categorySelect.value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const wattage = (category === 'Light Bulb H1' || category === 'Light Bulb H4') ? document.getElementById('wattage').value : '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const quantity = document.getElementById('quantity').value;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const retailer = type === 'Dispatched' ? document.getElementById('retailerName').value : '';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if(!category) return alert('Please select a product category');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const entry = { type, category, wattage, quantity, retailer };</p>
-<p class="p1"><span class="Apple-converted-space">            </span>records.push(entry);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('auto_addiction_inventory', JSON.stringify(records));</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>stockForm.reset();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>wattageGroup.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>retailerGroup.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>renderTable();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function deleteEntry(index) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>records.splice(index, 1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('auto_addiction_inventory', JSON.stringify(records));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>renderTable();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Initial Load</p>
-<p class="p1"><span class="Apple-converted-space">        </span>renderTable();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <h1>Auto <span>Addiction</span></h1>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Wholesale Operations & Stock Ledger</div>
+    </header>
+
+    <div class="container">
+        <!-- Entry Form Section -->
+        <div class="card">
+            <h2>Add Stock / Dispatch</h2>
+            <form id="stockForm">
+                <div class="form-group">
+                    <label for="entryType">Transaction Type</label>
+                    <select id="entryType">
+                        <option value="In Stock">Add Stock (Inward)</option>
+                        <option value="Dispatched">Dispatch to Retailer (Outward)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="retailerGroup" style="display: none;">
+                    <label for="retailerName">Retailer / Shop Name</label>
+                    <input type="text" id="retailerName" placeholder="Enter retailer name">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Product Category</label>
+                    <select id="category" onchange="handleCategoryChange()">
+                        <option value="">-- Select Category --</option>
+                        <option value="Light Bulb H1">Light Bulb H1</option>
+                        <option value="Light Bulb H4">Light Bulb H4</option>
+                        <option value="Android System">Android System</option>
+                        <option value="Ambient Light">Ambient Light</option>
+                        <option value="Camera">Camera</option>
+                        <option value="Bass Tube">Bass Tube</option>
+                        <option value="Frame">Frame</option>
+                        <option value="Center Lock (Single Door)">Center Lock (Single Door)</option>
+                        <option value="Center Lock (4 Door)">Center Lock (4 Door)</option>
+                    </select>
+                </div>
+
+                <!-- Sub Options for Bulbs -->
+                <div class="sub-options" id="wattageGroup">
+                    <label for="wattage">Wattage Option</label>
+                    <select id="wattage">
+                        <option value="50W">50W</option>
+                        <option value="70W">70W</option>
+                        <option value="90W">90W</option>
+                        <option value="110W">110W</option>
+                        <option value="130W">130W</option>
+                        <option value="150W">150W</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-top: 10px;">
+                    <label for="quantity">Quantity (Pcs)</label>
+                    <input type="number" id="quantity" min="1" placeholder="0" required>
+                </div>
+
+                <button type="submit">Submit Entry</button>
+            </form>
+        </div>
+
+        <!-- Inventory List Section -->
+        <div class="card">
+            <h2>Stock Ledger</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Product Details</th>
+                        <th>Qty</th>
+                        <th>Retailer / Note</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTable">
+                    <!-- Dynamic Rows Here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const entryTypeSelect = document.getElementById('entryType');
+        const retailerGroup = document.getElementById('retailerGroup');
+        const categorySelect = document.getElementById('category');
+        const wattageGroup = document.getElementById('wattageGroup');
+        const stockForm = document.getElementById('stockForm');
+        const inventoryTable = document.getElementById('inventoryTable');
+
+        // Toggle Retailer Field
+        entryTypeSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'Dispatched') {
+                retailerGroup.style.display = 'block';
+            } else {
+                retailerGroup.style.display = 'none';
+            }
+        });
+
+        // Toggle Wattage Dropdown for Bulbs
+        function handleCategoryChange() {
+            const val = categorySelect.value;
+            if (val === 'Light Bulb H1' || val === 'Light Bulb H4') {
+                wattageGroup.style.display = 'block';
+            } else {
+                wattageGroup.style.display = 'none';
+            }
+        }
+
+        // Save & Render Inventory using LocalStorage
+        let records = JSON.parse(localStorage.getItem('auto_addiction_inventory')) || [];
+
+        function renderTable() {
+            inventoryTable.innerHTML = '';
+            if(records.length === 0) {
+                inventoryTable.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No items recorded yet.</td></tr>';
+                return;
+            }
+
+            records.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><span class="badge" style="color: ${item.type === 'In Stock' ? '#4cc9f0' : '#f72585'}">${item.type}</span></td>
+                    <td><strong>${item.category}</strong> ${item.wattage ? `(${item.wattage})` : ''}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.retailer || '-'}</td>
+                    <td><button class="btn-del" onclick="deleteEntry(${index})">X</button></td>
+                `;
+                inventoryTable.appendChild(tr);
+            });
+        }
+
+        stockForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const type = entryTypeSelect.value;
+            const category = categorySelect.value;
+            const wattage = (category === 'Light Bulb H1' || category === 'Light Bulb H4') ? document.getElementById('wattage').value : '';
+            const quantity = document.getElementById('quantity').value;
+            const retailer = type === 'Dispatched' ? document.getElementById('retailerName').value : '';
+
+            if(!category) return alert('Please select a product category');
+
+            const entry = { type, category, wattage, quantity, retailer };
+            records.push(entry);
+            localStorage.setItem('auto_addiction_inventory', JSON.stringify(records));
+            
+            stockForm.reset();
+            wattageGroup.style.display = 'none';
+            retailerGroup.style.display = 'none';
+            renderTable();
+        });
+
+        function deleteEntry(index) {
+            records.splice(index, 1);
+            localStorage.setItem('auto_addiction_inventory', JSON.stringify(records));
+            renderTable();
+        }
+
+        // Initial Load
+        renderTable();
+    </script>
 </body>
 </html>
